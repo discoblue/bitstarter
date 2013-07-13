@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 //  response.send('Hello World 3!');
-fs.readFileSync(index.html);
+fs.readFileSync('index.html');
 response.send(buf.toString());  //need to do something with burffers to get it to read indx.html
 
 });
