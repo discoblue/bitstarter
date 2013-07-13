@@ -4,7 +4,8 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 //  response.send('Hello World 3!');
-    response.send(index.html);
+    response.send(fs.readFileSync(index.html,encoding));  //need to do something with burffers to get it to read indx.html
+
 });
 
 var port = process.env.PORT || 5000;
