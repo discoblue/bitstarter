@@ -1,17 +1,20 @@
 var express = require('express');
 var fs = require('fs');
+var htmlfile="index.html";  //added based on screenshot in Assign4
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-//  response.send('Hello World 3!');
-var buffer = new Buffer(256);
+    var html = fs.readFileSync(htmlfile).toString();  //added based on screenshot in Assign4  
+//    response.send(html);  //added based on screenshot in Assign4  
+  response.send('Hello World 3!');
+// var buffer = new Buffer(256);  //remove based on screenshot in Assign 4
 
-buffer = fs.readFileSync('index.html');
-response.send(buffer.toString());  //need to do something with burffers to get it to read indx.html
+// buffer = fs.readFileSync('index.html');    //remove based on screenshot in Assign 4          
+// response.send(buffer.toString());  //need to do something with burffers to get it to read indx.html  //remove based on screenshot in Assign 4          
 
 });
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
