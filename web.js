@@ -5,8 +5,8 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
     var html = fs.readFileSync('index.html').toString();    
-//    response.send(html);  //added based on screenshot in Assign4  
-  response.send('Hello World 3.1!');
+    response.send(html);  //added based on screenshot in Assign4  
+//  response.send('Hello World 3.1!');
 // var buffer = new Buffer(256);  //remove based on screenshot in Assign 4
 
 // buffer = fs.readFileSync('index.html');    //remove based on screenshot in Assign 4          
